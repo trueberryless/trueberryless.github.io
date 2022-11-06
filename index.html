@@ -16,84 +16,81 @@
                 <li><span>Felix Schneider</span></li>
             </ul>
             <ul class="links">
-                <li><a href="#top">Top</a></li>
-                <li><a href="#about-me">About me</a></li>
-                <li><a href="#contact-me">Contact me</a></li>
-                <li><a href="#footer">Footer</a></li>
+                <li onclick="ScrollTop()">Top</li>
+                <li onclick="ScrollTo('about-me')"">About me</li>
+                <li onclick="ScrollTo('contact-me')"">Contact me</li>
+                <li onclick="ScrollBottom()">Footer</li>
             </ul>
         </nav>
         <main id="content">
             <section id="top"><h1>Felix Schneider</h1></section>
             <section id="about-me"><h3>About me</h3></section>
             <section id="contact-me"><h3>Contact me</h3></section>
-            <div id="footer-corners"></div>
         </main>
         <footer id="footer">
-            <div id="footer-content">
-                <div class="container-social-links">
-                    <label class="label-social-links" for="social-links">Social links</label>
-                    <ul class="social-links">
-                        <li class="social-link">
-                            <a href="https://github.com/trueberryless/">
-                                <ion-icon name="logo-github" />
-                            </a>
-                        </li>
-                        <li class="social-link">
-                            <a href="https://www.instagram.com/trueberryless/">
-                                <ion-icon name="logo-instagram" />
-                            </a>
-                        </li>
-                        <li class="social-link">
-                            <a href="https://www.youtube.com/channel/UCDY2OethEpgu7ldxPx35zNQ">
-                                <ion-icon name="logo-youtube" />
-                            </a>
-                        </li>
-                        <li class="social-link">
-                            <a href="https://codepen.io/trueberryless">
-                                <ion-icon name="logo-codepen" />
-                            </a>
-                        </li>
-                        <li class="social-link">
-                            <a href="https://bitbucket.org/trueberryless/">
-                                <ion-icon name="logo-bitbucket" />
-                            </a>
-                        </li>
-                        <li class="social-link">
-                            <a href="https://stackoverflow.com/users/19638548/trueberryless">
-                                <ion-icon name="logo-stackoverflow" />
-                            </a>
-                        </li>
-                        <li class="social-link">
-                            <a href="https://twitter.com/trueberryless">
-                                <ion-icon name="logo-twitter" />
-                            </a>
-                        </li>
-                        <li class="social-link">
-                            <a href="https://www.twitch.tv/trueberryless">
-                                <ion-icon name="logo-twitch" />
-                            </a>
-                        </li>
-                        <li class="social-link">
-                            <a href="https://trueberryless.tumblr.com/">
-                                <ion-icon name="logo-tumblr" />
-                            </a>
-                        </li>
-                        <li class="social-link">
-                            <a href="https://www.reddit.com/user/Scary-Ad-6111">
-                                <ion-icon name="logo-reddit" />
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+            <div class="container-social-links">
+                <label class="label-social-links" for="social-links">Social links</label>
+                <ul class="social-links">
+                    <li class="social-link">
+                        <a href="https://github.com/trueberryless/">
+                            <ion-icon name="logo-github" />
+                        </a>
+                    </li>
+                    <li class="social-link">
+                        <a href="https://www.instagram.com/trueberryless/">
+                            <ion-icon name="logo-instagram" />
+                        </a>
+                    </li>
+                    <li class="social-link">
+                        <a href="https://www.youtube.com/channel/UCDY2OethEpgu7ldxPx35zNQ">
+                            <ion-icon name="logo-youtube" />
+                        </a>
+                    </li>
+                    <li class="social-link">
+                        <a href="https://codepen.io/trueberryless">
+                            <ion-icon name="logo-codepen" />
+                        </a>
+                    </li>
+                    <li class="social-link">
+                        <a href="https://bitbucket.org/trueberryless/">
+                            <ion-icon name="logo-bitbucket" />
+                        </a>
+                    </li>
+                    <li class="social-link">
+                        <a href="https://stackoverflow.com/users/19638548/trueberryless">
+                            <ion-icon name="logo-stackoverflow" />
+                        </a>
+                    </li>
+                    <li class="social-link">
+                        <a href="https://twitter.com/trueberryless">
+                            <ion-icon name="logo-twitter" />
+                        </a>
+                    </li>
+                    <li class="social-link">
+                        <a href="https://www.twitch.tv/trueberryless">
+                            <ion-icon name="logo-twitch" />
+                        </a>
+                    </li>
+                    <li class="social-link">
+                        <a href="https://trueberryless.tumblr.com/">
+                            <ion-icon name="logo-tumblr" />
+                        </a>
+                    </li>
+                    <li class="social-link">
+                        <a href="https://www.reddit.com/user/Scary-Ad-6111">
+                            <ion-icon name="logo-reddit" />
+                        </a>
+                    </li>
+                </ul>
             </div>
         </footer>
     </body>
-    <!-- 
+
     <script
         src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
         crossorigin="anonymous"
-    ></script> -->
+    ></script>
     <script
         type="module"
         src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
