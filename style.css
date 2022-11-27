@@ -37,13 +37,32 @@ html {
     scroll-padding: calc(2rem + var(--header-height-hover));
 }
 
-body::-webkit-scrollbar {
-    display: none;
+/* width */
+::-webkit-scrollbar {
+    width: 0px;
 }
 
-body {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+#progressbar {
+    position: fixed;
+    top: 3px;
+    right: 3px;
+    width: 5px;
+    height: 10%;
+    border-radius: 10px;
+
+    background: hsla(10, 89%, 70%, 1);
+    background: linear-gradient(97deg, hsla(10, 89%, 70%, 1) 0%, hsla(350, 100%, 69%, 1) 100%);
+    background: -moz-linear-gradient(97deg, hsla(10, 89%, 70%, 1) 0%, hsla(350, 100%, 69%, 1) 100%);
+    background: -webkit-linear-gradient(
+        97deg,
+        hsla(10, 89%, 70%, 1) 0%,
+        hsla(350, 100%, 69%, 1) 100%
+    );
+
+    cursor: grab;
+    user-select: none;
+
+    z-index: 101;
 }
 
 section {
@@ -204,6 +223,61 @@ nav .links li::after {
     background: white;
 }
 
+/* #top {
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#top img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#headline {
+    position: absolute;
+    top: 70%;
+    left: -7%;
+    font-size: 80px;
+    transform: translate(-20%, -70%);
+    color: white;
+    font-family: "Poppins", sans-serif;
+
+    user-select: none;
+    z-index: 3;
+}
+
+#slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+
+    background: rgb(2, 0, 36);
+    background: -moz-linear-gradient(
+        to left,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(9, 9, 121, 1) 35%,
+        rgba(0, 212, 255, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+        to left,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(9, 9, 121, 1) 35%,
+        rgba(0, 212, 255, 1) 100%
+    );
+    background: linear-gradient(
+        to left,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(9, 9, 121, 1) 35%,
+        rgba(0, 212, 255, 1) 100%
+    );
+} */
+
 #content {
     position: relative;
     width: var(--content-width);
@@ -213,16 +287,12 @@ nav .links li::after {
     z-index: 10;
     border-radius: 4rem;
 
-    /* Footer Height */
-    margin-bottom: var(--footer-height);
-
     /* Place for Header */
     margin-top: calc(2rem + var(--header-height-hover));
 }
 
 footer {
-    position: fixed;
-    /* background: #111; */
+    position: sticky;
     width: 100%;
     height: var(--footer-height);
     bottom: 0;
@@ -233,6 +303,10 @@ footer {
     align-items: center;
 
     transition: opacity 0.3s ease-in-out;
+}
+
+body[not-near-bottom] footer {
+    display: none;
 }
 
 :is(footer:hover, body[bottom-active] footer) {

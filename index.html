@@ -10,6 +10,7 @@
         <title>Felix Schneider</title>
     </head>
     <body>
+        <div id="progressbar"></div>
         <nav id="header">
             <ul class="logo">
                 <li><img src="img/trueberryless_round.png" /></li>
@@ -22,8 +23,13 @@
                 <li onclick="ScrollBottom()">Footer</li>
             </ul>
         </nav>
+        <!-- <section id="top">
+            <div>
+                <img id="intro-img" src="img/felix_golf.JPG" alt="">
+                <h1 id="headline">Yeah, that's me...</h1>
+            </div>
+        </section> -->
         <main id="content">
-            <section id="top"><h1>Felix Schneider</h1></section>
             <section id="about-me"><h3>About me</h3></section>
             <section id="contact-me"><h3>Contact me</h3></section>
         </main>
@@ -84,17 +90,22 @@
                 </ul>
             </div>
         </footer>
+        <!-- <div id="slider"></div> -->
     </body>
 
-    <script
+    <script async
         src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
         crossorigin="anonymous"
     ></script>
-    <script
+    <script async
         type="module"
         src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
     ></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="app.js"></script>
+    <script async nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
+
+    <script defer src="app.js"></script>
 </html>
