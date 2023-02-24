@@ -59,7 +59,7 @@ html {
         hsla(350, 100%, 69%, 1) 100%
     );
 
-    cursor: grab;
+    /* cursor: grab; */
     user-select: none;
 
     z-index: 101;
@@ -116,6 +116,7 @@ nav:hover {
 
 body[top-active] nav {
     height: calc(2rem + var(--header-height-hover));
+    background: transparent;
 }
 
 nav ul {
@@ -132,6 +133,8 @@ nav ul li {
 
     display: inline-flex;
     align-items: center;
+
+    user-select: none;
 }
 
 nav img {
@@ -150,8 +153,8 @@ nav img {
     margin: 2rem;
 }
 
-nav ul li {
-    user-select: none;
+nav .logo {
+    position: relative;
 }
 
 nav .logo span {
@@ -223,61 +226,6 @@ nav .links li::after {
     background: white;
 }
 
-/* #top {
-    display: flex;
-    height: 80vh;
-    justify-content: center;
-    align-items: center;
-}
-
-#top img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-#headline {
-    position: absolute;
-    top: 70%;
-    left: -7%;
-    font-size: 80px;
-    transform: translate(-20%, -70%);
-    color: white;
-    font-family: "Poppins", sans-serif;
-
-    user-select: none;
-    z-index: 3;
-}
-
-#slider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: -1;
-
-    background: rgb(2, 0, 36);
-    background: -moz-linear-gradient(
-        to left,
-        rgba(2, 0, 36, 1) 0%,
-        rgba(9, 9, 121, 1) 35%,
-        rgba(0, 212, 255, 1) 100%
-    );
-    background: -webkit-linear-gradient(
-        to left,
-        rgba(2, 0, 36, 1) 0%,
-        rgba(9, 9, 121, 1) 35%,
-        rgba(0, 212, 255, 1) 100%
-    );
-    background: linear-gradient(
-        to left,
-        rgba(2, 0, 36, 1) 0%,
-        rgba(9, 9, 121, 1) 35%,
-        rgba(0, 212, 255, 1) 100%
-    );
-} */
-
 #content {
     position: relative;
     width: var(--content-width);
@@ -289,6 +237,85 @@ nav .links li::after {
 
     /* Place for Header */
     margin-top: calc(2rem + var(--header-height-hover));
+}
+
+.card-group {
+    position: relative;
+}
+
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+}
+
+.card {
+    position: relative;
+    --width: 20rem;
+    width: var(--width);
+    aspect-ratio: 3/4;
+    /* overflow: hidden; */
+    border-radius: 20px;
+}
+
+.card > div {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.card::before {
+    content: "";
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    border-radius: 25px;
+    background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+    position: absolute;
+    z-index: -1;
+    top: -5px;
+    left: -5px;
+    animation: spin 2.5s linear infinite;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+@keyframes spin {
+    0% {
+        --rotate: 0deg;
+    }
+    100% {
+        --rotate: 360deg;
+    }
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: border 0.5s ease-in-out;
+    border-radius: 15px;
+}
+
+.card:hover::after {
+    border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(97%) grayscale(20%) saturate(90%);
+    transition: filter 1.4s ease;
+}
+
+.card:hover img {
+    filter: brightness(100%) grayscale(5%) saturate(95%);
 }
 
 footer {

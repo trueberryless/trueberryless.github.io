@@ -55,12 +55,6 @@ function ProgressBarOnScroll() {
     $("#progressbar").css("top", scrollPercent + "%");
 }
 
-const ProgressBarOnDrag = function (e) {
-    y = e.clientY;
-    document.addEventListener("mousemove", ProgressBarOnMove);
-    document.addEventListener("mouseup", ProgressBarOnUp);
-};
-
 const ProgressBarOnMove = function (e) {
     // How far the mouse has been moved
     const dy = e.clientY - y;
@@ -91,4 +85,23 @@ $(window).scroll(function () {
     ProgressBarOnScroll();
 });
 
-document.getElementById("progressbar").addEventListener("mousedown", ProgressBarOnDrag);
+function VanillaTiltEffect() {
+    VanillaTilt.init(document.querySelectorAll(".card"), {
+        reverse: Math.random() > 0.7 ? true : false,
+        scale: (Math.random() * 9 + 95) / 105,
+        max: Math.random() * 15 + 4,
+        speed: Math.random() * 1000 + 500,
+        glare: true,
+        "max-glare": Math.random() * Math.random(),
+        perspective: 1000,
+        gyroscope: true,
+        gyroscopeMinAngleX: -45,
+        gyroscopeMaxAngleX: 45,
+        gyroscopeMinAngleY: -45,
+        gyroscopeMaxAngleY: 45,
+    });
+}
+
+function OnLoad() {
+    VanillaTiltEffect();
+}
