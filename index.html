@@ -27,11 +27,23 @@
         <main id="content">
             <section id="about-me">
                 <h3>About me</h3>
-                <div class="card-group">
+                <div class="card-group" style="position: absolute; right: 3rem; top: 3rem">
                     <div class="card">
                         <div>
                             <img src="img/felix.jpg" />
-                            <div>Felix Schneider</div>
+                            <div class="content">
+                                <span>Felix Schneider</span>
+                                <span id="ityped-felix-schneider"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <img src="img/felix_golf.JPG" />
+                            <div class="content">
+                                <span>Little Schneider</span>
+                                <span id="ityped-little-schneider"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -99,25 +111,26 @@
     </body>
 
     <script
-        async
+        defer
         src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
         crossorigin="anonymous"
     ></script>
     <script
-        async
+        defer
         type="module"
         src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
     ></script>
     <script
-        async
+        defer
         nomodule
         src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
-    <script async type="text/javascript" src="/js/vanilla-tilt.js"></script>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script defer type="text/javascript" src="/js/vanilla-tilt.js"></script>
+    <script defer type="text/javascript" src="/js/ityped.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
     <script
-        async
+        defer
         src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"
     ></script>
 

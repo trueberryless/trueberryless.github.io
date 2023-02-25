@@ -93,7 +93,6 @@ function VanillaTiltEffect() {
         speed: Math.random() * 1000 + 500,
         glare: true,
         "max-glare": Math.random() * Math.random(),
-        perspective: 1000,
         gyroscope: true,
         gyroscopeMinAngleX: -45,
         gyroscopeMaxAngleX: 45,
@@ -102,6 +101,65 @@ function VanillaTiltEffect() {
     });
 }
 
+function CardContentTransform() {
+    var contents = document.querySelectorAll(".content");
+
+    // create an Observer instance
+    const resizeObserver = new ResizeObserver((content) => {
+        content[0].target.style.transform =
+            "translateY(calc(var(--width) * 4 / 3 * 0.8 - " +
+            content[0].target.clientHeight +
+            "px + 32px)) translateZ(20px)";
+    });
+
+    contents.forEach((content) => {
+        // start observing a DOM node
+        resizeObserver.observe(content);
+    });
+}
+
+function ITyped() {
+    const e1 = document.getElementById("ityped-felix-schneider");
+
+    ityped.init(e1, {
+        showCursor: true,
+        backDelay: 1500,
+        // loop: true,
+        strings: [
+            " is a Programmer.",
+            " is highly motivated.",
+            " is a Designer.",
+            " is flexible.",
+            " is a Full Stack Developer.",
+            " is resourceful.",
+            " is proactive.",
+            " is supportive.",
+            " is self-confident.",
+            " will be your next employee!",
+        ],
+    });
+
+    const e2 = document.getElementById("ityped-little-schneider");
+
+    ityped.init(e2, {
+        showCursor: true,
+        backDelay: 1500,
+        // loop: true,
+        strings: [
+            " was cut.",
+            " liked playing golf.",
+            " was interested in trains.",
+            " loved music.",
+            " had a dream childhood.",
+            " loved sports.",
+            " liked playing outside.",
+            " is happy.",
+        ],
+    });
+}
+
 function OnLoad() {
     VanillaTiltEffect();
+    ITyped();
+    CardContentTransform();
 }
