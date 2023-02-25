@@ -102,10 +102,10 @@ function VanillaTiltEffect() {
 }
 
 function CardContentTransform() {
-    var contents = document.querySelectorAll(".content");
+    var contents = document.querySelectorAll(".card .content");
 
     // create an Observer instance
-    const resizeObserver = new ResizeObserver((content) => {
+    const resizeObserverContent = new ResizeObserver((content) => {
         content[0].target.style.transform =
             "translateY(calc(var(--width) * 4 / 3 * 0.8 - " +
             content[0].target.clientHeight +
@@ -114,7 +114,7 @@ function CardContentTransform() {
 
     contents.forEach((content) => {
         // start observing a DOM node
-        resizeObserver.observe(content);
+        resizeObserverContent.observe(content);
     });
 }
 
@@ -146,14 +146,27 @@ function ITyped() {
         backDelay: 1500,
         // loop: true,
         strings: [
-            " was cut.",
-            " liked playing golf.",
-            " was interested in trains.",
-            " loved music.",
+            " is cut.",
+            " likes playing golf.",
+            " is interested in trains.",
+            " loves music.",
             " had a dream childhood.",
-            " loved sports.",
-            " liked playing outside.",
-            " is happy.",
+            " loves sports.",
+            " is always happy.",
+        ],
+    });
+
+    const e3 = document.getElementById("ityped-about-me");
+
+    ityped.init(e3, {
+        showCursor: true,
+        backDelay: 1500,
+        typeSpeed: 50,
+        backSpeed: 12,
+        strings: [
+            "Yeah, that's me...",
+            "My name is Felix Schneider, I was born in 2005 and I like programming and publishing things on GitHub.",
+            "My hobbies are playing tennis, golf and basketball. I also enjoy playing cards and computer games, especially platformers, like Celeste.",
         ],
     });
 }

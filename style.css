@@ -16,6 +16,23 @@
     font-family: "Poppins", sans-serif;
 }
 
+.ityped-cursor {
+    opacity: 1;
+    -webkit-animation: blink 0.5s infinite;
+    -moz-animation: blink 0.5s infinite;
+    animation: blink 0.5s infinite ease-in-out;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
 /* :target::before {
     content: "";
     display: block;
