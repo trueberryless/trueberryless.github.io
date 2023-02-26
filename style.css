@@ -531,6 +531,11 @@ body[not-near-bottom] footer {
     transform: scale(1.5) rotate(-2deg);
 }
 
+.social-link:nth-of-type(11):hover {
+    color: #ec9d00;
+    transform: scale(1.5) rotate(3deg);
+}
+
 @media only screen and (min-width: 1200px) {
     nav {
         padding-inline: calc((100% - var(--content-width)) / 2);
