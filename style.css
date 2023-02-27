@@ -260,6 +260,7 @@ nav .links li::after {
 .card-group {
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     gap: 5rem;
 }
 
@@ -271,7 +272,7 @@ nav .links li::after {
 
 .card {
     position: relative;
-    --width: 20rem;
+    --width: min(20rem, 100%);
     width: var(--width);
     aspect-ratio: 3/4;
     /* overflow: hidden; */
@@ -361,12 +362,12 @@ nav .links li::after {
     position: absolute;
     left: 3rem;
     right: 3rem;
-    top: 0rem;
+    top: 82%;
 
     transform-style: preserve-3d;
     transform: perspective(1000px);
 
-    transform: translateY(calc(var(--width) * 4 / 3 * 0.8)) translateZ(20px);
+    transform: translateY(0px) translateZ(20px);
     will-change: transform;
     transition: transform 0.3s ease;
     user-select: none;
@@ -528,6 +529,11 @@ body[not-near-bottom] footer {
 .social-link:nth-of-type(10):hover {
     color: #ff3f18;
     transform: scale(1.5) rotate(-2deg);
+}
+
+.social-link:nth-of-type(11):hover {
+    color: #ec9d00;
+    transform: scale(1.5) rotate(3deg);
 }
 
 @media only screen and (min-width: 1200px) {

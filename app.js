@@ -107,9 +107,7 @@ function CardContentTransform() {
     // create an Observer instance
     const resizeObserverContent = new ResizeObserver((content) => {
         content[0].target.style.transform =
-            "translateY(calc(var(--width) * 4 / 3 * 0.8 - " +
-            content[0].target.clientHeight +
-            "px + 32px)) translateZ(20px)";
+            "translateY(calc(-" + content[0].target.clientHeight + "px + 32px)) translateZ(20px)";
     });
 
     contents.forEach((content) => {
@@ -146,7 +144,7 @@ function ITyped() {
         backDelay: 1500,
         // loop: true,
         strings: [
-            " is cut.",
+            " is cute.",
             " likes playing golf.",
             " is interested in trains.",
             " loves music.",
