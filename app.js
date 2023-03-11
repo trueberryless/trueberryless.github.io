@@ -83,6 +83,7 @@ window.addEventListener("load", (event) => {
 
 $(window).scroll(function () {
     ProgressBarOnScroll();
+    BodyScrollActive();
 });
 
 function VanillaTiltEffect() {
